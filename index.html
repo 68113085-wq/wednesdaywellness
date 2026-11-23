@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#047857">
+<title>Wednesday Wellness — จองคิวนวด</title>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:'Anuphan',system-ui,sans-serif;color:#1e293b;background:radial-gradient(900px 420px at 85% -8%,#c8f5e6 0,transparent 62%),radial-gradient(700px 380px at -5% 10%,#dbeafe 0,transparent 60%),#f4f8fb;background-attachment:fixed;-webkit-text-size-adjust:100%}
+button,input,select,textarea{font-family:inherit;font-size:inherit}button{cursor:pointer}:focus-visible{outline:2px solid #0d9488;outline-offset:2px}
+.w{max-width:1024px;width:100%;margin:0 auto;padding:0 24px}
+.cd{background:#fff;border:1px solid rgba(226,232,240,.9);border-radius:22px;box-shadow:0 1px 2px rgba(15,23,42,.04),0 12px 32px -18px rgba(15,23,42,.18)}
+.pill{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;display:inline-block}.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hd{background:rgba(255,255,255,.85);backdrop-filter:saturate(1.6) blur(14px);position:sticky;top:0;z-index:30;border-bottom:1px solid #e2e8f0}
+.nv{background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0}
+.tab{border:0;background:none;padding:14px 16px;font-size:14px;display:flex;gap:8px;align-items:center;border-bottom:2px solid transparent;color:#475569;border-radius:12px 12px 0 0;white-space:nowrap}.tab:hover{background:rgba(4,120,87,.06)}
+.g6{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px}
+.s{border:1.5px solid #d1fae5;border-radius:18px;padding:14px;min-height:108px;display:flex;flex-direction:column;justify-content:space-between;gap:6px;text-align:left;background:linear-gradient(180deg,#fff,#f0fdf8);font-size:15px;font-weight:700;color:#065f46;transition:transform .15s,box-shadow .15s,border-color .15s}
+.s.t{border-color:#ccfbf1;color:#0f766e;background:linear-gradient(180deg,#fff,#f0fdfa)}.s.b{background:#fff5f6;border-color:#fecdd3;color:#be123c}.s.g{background:#f1f5f9;border-color:#e2e8f0;color:#566074}.s.m{background:linear-gradient(180deg,#fffbeb,#fef3c7);border-color:#f59e0b;color:#92400e}.s.w{background:#fffbeb;border-color:#fcd34d;color:#92400e}
+.s:disabled{cursor:not-allowed}.s:not(:disabled):hover{transform:translateY(-3px);box-shadow:0 14px 26px -12px rgba(4,120,87,.45);border-color:#10b981}.s:not(:disabled):active{transform:scale(.97)}
+.s .l{font-size:12px;font-weight:600}.pb{display:block;height:5px;border-radius:9px;background:rgba(15,23,42,.09);overflow:hidden}.pb i{display:block;height:100%;background:currentColor;opacity:.75;border-radius:9px}
+.bt{background:#047857;color:#fff;border:0;border-radius:14px;padding:10px 18px;font-size:13px;font-weight:700;box-shadow:0 8px 18px -10px rgba(4,120,87,.8);transition:filter .15s}.bt:not(:disabled):hover{filter:brightness(1.08)}.bt:disabled{opacity:.6}
+.ol{padding:10px 18px;border-radius:14px;border:1px solid #cbd5e1;background:#fff;font-size:13px;font-weight:700;color:#334155}.ol:hover{background:#f1f5f9}
+.inp{width:100%;height:46px;border-radius:12px;border:1px solid #475569;background:#0f172a;color:#fff;padding:0 14px;font-size:15px}
+.fi{width:100%;min-height:44px;border-radius:12px;border:1px solid #cbd5e1;background:#fff;color:#1e293b;padding:0 12px;font-size:15px}textarea.fi{padding:10px 12px;resize:vertical}
+.hero{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:26px;border-radius:26px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,#047857,#0f766e 55%,#0e7490);box-shadow:0 22px 44px -22px rgba(4,120,87,.7)}
+.hero::after{content:'';position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.12)}.hero>*{position:relative;z-index:1}
+.cdw{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:18px;padding:10px 18px;text-align:center;display:flex;flex-direction:column}.cdw b{font-size:26px;font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:10px;overflow-x:auto;padding:14px 2px 6px;scroll-snap-type:x proximity}
+.chip{scroll-snap-align:start;flex:0 0 auto;min-width:70px;border:1.5px solid #e2e8f0;background:#fff;border-radius:18px;padding:9px 8px;display:flex;flex-direction:column;align-items:center;gap:1px;color:#334155}
+.chip b{font-size:21px;line-height:1.15}.chip small{font-size:11px;color:#566074}.chip[aria-selected=true]{background:#047857;border-color:#047857;color:#fff}.chip[aria-selected=true] small{color:#d1fae5}
+.ring{--p:0;width:78px;height:78px;border-radius:50%;flex:none;background:conic-gradient(#10b981 calc(var(--p)*1%),#e2e8f0 0);display:grid;place-items:center;position:relative}
+.ring::before{content:'';position:absolute;inset:9px;border-radius:50%;background:#fff}.ring b{position:relative;font-size:17px}
+.br{display:grid;grid-template-columns:150px 1fr 90px;gap:12px;align-items:center;font-size:13px}
+.av{border-radius:50%;object-fit:cover;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700;flex:none}
+.stg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.sw{width:34px;height:34px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1.5px #cbd5e1}.sw[aria-pressed=true]{box-shadow:0 0 0 3px #0f172a}
+#toast,#ntf{position:fixed;z-index:60;display:flex;flex-direction:column;gap:10px}#toast{bottom:20px;right:20px;left:20px;align-items:flex-end}#ntf{top:16px;right:16px;max-width:360px}
+.tm{padding:12px 16px;border-radius:16px;color:#fff;font-size:14px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2)}.nt{background:#fff;border:2px solid #f59e0b;border-radius:16px;padding:14px 16px;box-shadow:0 12px 32px rgba(0,0,0,.25);animation:pop .35s}
+main>*{animation:up .4s both}@keyframes up{from{opacity:0;transform:translateY(10px)}}@keyframes pop{from{transform:translateY(-12px);opacity:0}}@keyframes sheet{from{opacity:0;transform:translateY(24px)}}
+[role=dialog]{animation:sheet .28s}div:has(>[role=dialog]){backdrop-filter:blur(5px)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:760px){
+ .w{padding:0 14px}.hsub,.hdept,.hbell span{display:none}
+ .nv{position:fixed;left:0;right:0;bottom:0;z-index:35;border:0;border-top:1px solid #e2e8f0;background:rgba(255,255,255,.94);padding-bottom:env(safe-area-inset-bottom)}
+ .nv .w{padding:0 4px;gap:0!important;flex-wrap:nowrap}.tab{flex:1;flex-direction:column;justify-content:center;gap:3px;font-size:11px;padding:9px 2px;text-align:center;border-radius:0;white-space:normal}
+ main{padding-bottom:104px!important}footer{padding-bottom:90px!important}.hero{padding:20px}.br{grid-template-columns:96px 1fr 64px;gap:8px}
+ div:has(>[role=dialog]){align-items:flex-end!important;padding:0!important}[role=dialog]{max-width:none!important;border-radius:26px 26px 0 0!important}
+ #toast{bottom:84px}#ntf{left:12px;right:12px;max-width:none}
+}
+@media(max-width:480px){.g6{grid-template-columns:repeat(2,1fr);gap:10px}.s{padding:12px;font-size:14px}.cd{border-radius:18px}}
+</style>
+</head>
+<body>
+<div id="app"></div><div id="ntf" role="alert" aria-live="assertive"></div><div id="toast" role="status"></div>
+<input id="pfile" type="file" accept="image/*" hidden>
+
+<script type="module">
+/* ============ ตั้งค่า ============ */
+const CONFIG={apiKey: "AIzaSyCQAWWRRqAU0EN9sY51RDJT52LRtAt6OiU",
+  authDomain: "wednesdaywellness-30107.firebaseapp.com",
+  projectId: "wednesdaywellness-30107",
+  storageBucket: "wednesdaywellness-30107.firebasestorage.app",
+  messagingSenderId: "385030471676",
+  appId: "1:385030471676:web:519f11795d71c11a42fc79",
+  measurementId: "G-13QF2CND98"};
+const COMPANY_DOMAIN='chubb.com';   // อนุญาตเฉพาะอีเมล @chubb.com
+const CAPACITY=10;                  // จำนวนที่นั่งต่อรอบ (หมอนวด 10 คน)
+const ALERT_MINUTES=[15,5];         // เด้งแจ้งเตือนก่อนถึงคิวกี่นาที (และเมื่อถึงเวลา)
+const DEPTS=['การเงิน (Finance)','การตลาด (Marketing)','ไอที (IT Support)','ทรัพยากรบุคคล (HR)','ขาย (Sales)','จัดซื้อ (Procurement)','คลังสินค้า (Warehouse)','อื่น ๆ'];
+const COLORS=['#047857','#0f766e','#0369a1','#6d28d9','#be123c','#b45309','#334155'];
+
+const LOGO_SVG='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#047857"/><stop offset="1" stop-color="#14b8a6"/></linearGradient></defs><rect width="128" height="128" rx="32" fill="url(#g)"/><circle cx="64" cy="64" r="46" fill="#fff" fill-opacity=".08"/><path d="M30 50C50 52 62 66 64 82C44 84 32 72 30 50Z" fill="#fff" fill-opacity=".78"/><path d="M98 50C78 52 66 66 64 82C84 84 96 72 98 50Z" fill="#fff" fill-opacity=".78"/><path d="M64 26C79 43 79 66 64 84C49 66 49 43 64 26Z" fill="#fff"/><path d="M32 94Q48 104 64 94T96 94" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>';
+const LOGO='data:image/svg+xml;base64,'+btoa(LOGO_SVG);
+{const l=document.createElement('link');l.rel='icon';l.href=LOGO;document.head.append(l)}
+
+/* ============ Helper ============ */
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0'),ds=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const pd=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)},tm=m=>`${pad(Math.floor(m/60))}:${pad(m%60)}`;
+const wednesdays=n=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+(3-d.getDay()+7)%7);return Array.from({length:n},(_,i)=>{const x=new Date(d);x.setDate(d.getDate()+7*i);return ds(x)})};
+const thai=(s,short)=>pd(s).toLocaleDateString('th-TH',short?{day:'numeric',month:'short',year:'numeric'}:{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const start=s=>new Date(`${s.date}T${s.startTime}:00`),isPast=s=>start(s)<=new Date(),HOUR=3600e3;
+const esc=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ACTIVE=['confirmed','checked_in','no_show'],staff=u=>u.role==='admin'||u.role==='therapist';
+function genSlots(date){if(pd(date).getDay()!==3)throw new Error('ไม่ใช่วันพุธ');const o=[];
+ for(const[a,b]of[[540,720],[780,960]])for(let t=a;t<b;t+=30)o.push({slotId:`${date}_${tm(t).replace(':','')}`,date,startTime:tm(t),endTime:tm(t+30),capacity:CAPACITY,bookedCount:0});return o}
+const ERR={FULL:'รอบนี้เต็มแล้ว กรุณาเลือกรอบอื่น',QUOTA:'คุณใช้สิทธิ์ของสัปดาห์นี้แล้ว (1 ครั้ง/สัปดาห์)',PAST:'รอบนี้ผ่านไปแล้ว',NOT_FOUND:'ไม่พบรอบนวดนี้ (แอดมินยังไม่เปิดรอบ)',TOO_LATE:'ยกเลิกได้ล่วงหน้าอย่างน้อย 1 ชั่วโมงก่อนเริ่มรอบ',NOT_OWNER:'ไม่พบคิวของคุณในรอบนี้'};
+const errMsg=e=>e.code==='permission-denied'?'ไม่มีสิทธิ์ทำรายการ (ตรวจสอบ Firestore Rules)':ERR[e.message]||'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง';
+const dbErr=e=>e.code==='permission-denied'?'ฐานข้อมูลปฏิเสธการเข้าถึง: ยังไม่ได้ Publish Firestore Rules หรือ Rules ไม่ตรง':(e.code==='unavailable'||e.code==='not-found')?'ยังไม่ได้สร้าง Firestore Database ในโปรเจกต์นี้':'เชื่อมต่อฐานข้อมูลไม่สำเร็จ: '+(e.code||e.message);
+const AUTHERR={'auth/email-already-in-use':'อีเมลนี้สมัครไว้แล้ว','auth/operation-not-allowed':'ยังไม่ได้เปิดล็อกอินแบบ Email/Password ใน Firebase Authentication','auth/invalid-email':'รูปแบบอีเมลไม่ถูกต้อง','auth/weak-password':'รหัสผ่านสั้นเกินไป (อย่างน้อย 6 ตัว)','auth/network-request-failed':'เชื่อมต่อเครือข่ายไม่ได้','auth/operation-not-supported-in-this-environment':'ต้องเปิดผ่านเว็บเซิร์ฟเวอร์ (https/localhost) ไม่ใช่เปิดไฟล์ตรง ๆ','auth/invalid-credential':'อีเมลหรือรหัสผ่านไม่ถูกต้อง','auth/user-not-found':'ไม่พบบัญชีนี้','auth/wrong-password':'รหัสผ่านไม่ถูกต้อง','auth/too-many-requests':'ลองหลายครั้งเกินไป กรุณารอสักครู่'};
+const authMsg=e=>AUTHERR[e.code]||'ไม่สำเร็จ ('+(e.code||e.message)+')';
+
+/* ============ Firebase ============ */
+let store;
+if(CONFIG.apiKey){
+ const B='https://www.gstatic.com/firebasejs/10.14.1/';
+ const[{initializeApp},A,F]=await Promise.all([import(B+'firebase-app.js'),import(B+'firebase-auth.js'),import(B+'firebase-firestore.js')]);
+ const app=initializeApp(CONFIG),auth=A.getAuth(app),db=F.getFirestore(app);let regData=null;
+ const col=n=>F.collection(db,n),dc=(n,i)=>F.doc(db,n,i),q=(n,...w)=>F.query(col(n),...w),W=F.where,bid=(u,d)=>`${u}_${d}`;
+ const snap=(qq,cb)=>F.onSnapshot(qq,sn=>cb(sn.docs.map(d=>({id:d.id,...d.data()}))),e=>console.error(e));
+ store={
+  init(cb){A.onAuthStateChanged(auth,async u=>{if(!u)return cb(null);
+   if(!u.email||!u.email.toLowerCase().endsWith('@'+COMPANY_DOMAIN)){await A.signOut(auth);return cb(null,`อนุญาตเฉพาะอีเมล @${COMPANY_DOMAIN} เท่านั้น`)}
+   try{const r=dc('users',u.uid);let s=await F.getDoc(r);
+    if(!s.exists()){await F.setDoc(r,{name:regData?regData.name:(u.displayName||u.email),email:u.email.toLowerCase(),department:regData?regData.department:'ไม่ระบุ',phone:'',bio:'',photoURL:'',avatarColor:'#047857',role:'employee',createdAt:F.serverTimestamp()});regData=null;s=await F.getDoc(r)}
+    cb({uid:u.uid,...s.data()})}catch(e){console.error(e);cb(null,dbErr(e))}})},
+  login:(e,p)=>A.signInWithEmailAndPassword(auth,e,p),reset:e=>A.sendPasswordResetEmail(auth,e),logout:()=>A.signOut(auth),
+  async register(p){regData=p;try{await A.createUserWithEmailAndPassword(auth,p.email,p.password)}catch(e){regData=null;throw e}},
+  saveProfile:(uid,d)=>F.updateDoc(dc('users',uid),d),updateUser:(uid,d)=>F.updateDoc(dc('users',uid),d),
+  subscribeUser:(uid,cb)=>F.onSnapshot(dc('users',uid),s=>s.exists()&&cb(s.data()),e=>console.error(e)),
+  subscribeUsers:cb=>snap(col('users'),l=>cb(l.map(u=>({...u,uid:u.id})))),
+  subscribe:(date,cb)=>snap(q('slots',W('date','==',date)),l=>cb(l.sort((a,b)=>a.startTime.localeCompare(b.startTime)))),
+  subscribeBookings:(date,cb)=>snap(q('bookings',W('date','==',date)),cb),
+  subscribeMine:(uid,cb)=>snap(q('bookings',W('userId','==',uid)),cb),
+  subscribeRange(a,b,cb){let s=null,k=null;const f=()=>s&&k&&cb({slots:s,bookings:k});
+   const u1=snap(q('slots',W('date','>=',a),W('date','<=',b)),l=>{s=l;f()}),u2=snap(q('bookings',W('date','>=',a),W('date','<=',b)),l=>{k=l;f()});return()=>{u1();u2()}},
+  async generate(date){const ex=await F.getDocs(q('slots',W('date','==',date)));if(!ex.empty)return false;
+   const b=F.writeBatch(db);genSlots(date).forEach(s=>b.set(dc('slots',s.slotId),s));await b.commit();return true},
+  // จองคิว: Transaction กันที่นั่งเกิน 10 คน + ตรวจโควตา 1 ครั้ง/สัปดาห์
+  async book(s,u){if(isPast(s))throw new Error('PAST');const sr=dc('slots',s.slotId),br=dc('bookings',bid(u.uid,s.date));
+   await F.runTransaction(db,async tx=>{const[ss,bs]=await Promise.all([tx.get(sr),tx.get(br)]);
+    if(!ss.exists())throw new Error('NOT_FOUND');const d=ss.data();if((d.bookedCount||0)>=(d.capacity||CAPACITY))throw new Error('FULL');
+    if(bs.exists()&&ACTIVE.includes(bs.data().status))throw new Error('QUOTA');
+    tx.update(sr,{bookedCount:(d.bookedCount||0)+1});
+    tx.set(br,{bookingId:br.id,slotId:s.slotId,userId:u.uid,userName:u.name,userDept:u.department,date:s.date,startTime:s.startTime,endTime:s.endTime,status:'confirmed',createdAt:F.serverTimestamp()})})},
+  async cancel(b,u){if(start(b)-Date.now()<HOUR)throw new Error('TOO_LATE');const sr=dc('slots',b.slotId),br=dc('bookings',bid(u.uid,b.date));
+   await F.runTransaction(db,async tx=>{const[ss,bs]=await Promise.all([tx.get(sr),tx.get(br)]);
+    if(!bs.exists()||bs.data().userId!==u.uid||bs.data().status!=='confirmed')throw new Error('NOT_OWNER');
+    tx.update(sr,{bookedCount:Math.max(0,((ss.data()||{}).bookedCount||1)-1)});tx.update(br,{status:'cancelled'})})},
+  setBookingStatus:(b,st)=>F.updateDoc(dc('bookings',b.id),{status:st})};
+}else{store={mode:'none',init:cb=>cb(null)}}
+
+/* ============ State ============ */
+const S={user:null,ready:false,reg:false,tab:'book',date:wednesdays(1)[0],slots:[],bookings:[],mine:[],users:[],range:{slots:[],bookings:[]},month:ds(new Date()).slice(0,7),sel:null,busy:false,err:'',loginErr:'',forgot:false,fsent:'',fb:false,rv:{},pd:null,ntfs:[]};
+const nextQ=()=>S.mine.filter(b=>b.status==='confirmed'&&start(b)>Date.now()-30*60000).sort((a,b)=>start(a)-start(b))[0];
+const mineHere=()=>S.mine.find(b=>b.date===S.date&&ACTIVE.includes(b.status));
+
+/* ============ แจ้งเตือนใกล้ถึงคิว (ในเว็บ + เบราว์เซอร์) ============ */
+const beep=()=>{try{const c=new AudioContext(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=880;g.gain.value=.15;o.start();o.stop(c.currentTime+.25)}catch{}};
+const ic=d=>`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const IC={cal:ic('<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/>'),clk:ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),shd:ic('<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>'),out:ic('<path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>'),bell:ic('<path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/>'),chart:ic('<path d="M3 3v18h18M7 15l4-4 3 3 5-6"/>'),user:ic('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>'),cam:ic('<path d="M3 8a2 2 0 012-2h2l2-2h6l2 2h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="4"/>'),eye:ic('<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>'),eyeoff:ic('<path d="M17.9 17.9A10.9 10.9 0 0112 19C5 19 1 12 1 12a18 18 0 015.1-5.9M9.9 4.2A10 10 0 0112 4c7 0 11 8 11 8a18 18 0 01-2.2 3.2M14.1 14.1a3 3 0 11-4.2-4.2M1 1l22 22"/>')};
+const rn=()=>{$('#ntf').innerHTML=S.ntfs.map(n=>`<div class="nt"><div class="row" style="justify-content:space-between;align-items:flex-start;flex-wrap:nowrap"><b style="font-size:14px;color:#92400e">${IC.bell} ${esc(n.title)}</b><button data-a="dis" data-v="${n.id}" aria-label="ปิดการแจ้งเตือน" style="border:0;background:none;font-size:20px;color:#475569">×</button></div><p style="margin:4px 0 0;font-size:13px">${esc(n.body)}</p></div>`).join('')};
+function notify(title,body){S.ntfs.push({id:Date.now()+Math.random(),title,body});rn();beep();if('Notification' in window&&Notification.permission==='granted')try{new Notification(title,{body,tag:'mww'})}catch{}}
+function checkAlerts(){const b=nextQ();if(!b)return;const diff=start(b)-Date.now();
+ for(const m of[...ALERT_MINUTES,0]){const k=`mww_n_${b.bookingId}_${m}`;
+  if(diff<=m*60000&&diff>-10*60000&&!localStorage.getItem(k)){localStorage.setItem(k,1);notify(m?`อีก ${m} นาทีถึงคิวนวดของคุณ`:'ถึงเวลาคิวนวดของคุณแล้ว',`รอบ ${b.startTime} - ${b.endTime} น. · กรุณาไปที่ห้องนวด`);break}}}
+const toast=(m,t='ok')=>{const e=document.createElement('div');e.className='tm';e.style.background=t==='err'?'#be123c':t==='info'?'#0369a1':'#047857';e.textContent=m;$('#toast').append(e);setTimeout(()=>e.remove(),4000)};
+
+/* ============ UI ============ */
+const foot='<footer style="margin-top:auto;background:#fff;border-top:1px solid #e2e8f0;padding:16px;text-align:center;font-size:12px;color:#475569">Wednesday Wellness Booking System © 2026</footer>';
+const avatar=(u,n=36)=>u.photoURL?`<img class="av" src="${esc(u.photoURL)}" width="${n}" height="${n}" alt="">`:`<span class="av" style="width:${n}px;height:${n}px;background:${esc(u.avatarColor||'#047857')};font-size:${Math.round(n*.42)}px" aria-hidden="true">${esc((u.name||'?')[0])}</span>`;
+const pwf=(id,l,ac)=>`<div><label for="${id}" style="font-size:12px;font-weight:600;color:#cbd5e1;display:block;margin-bottom:6px">${l}</label><div style="position:relative"><input id="${id}" class="inp" type="password" placeholder="••••••••" autocomplete="${ac}" style="padding-right:48px"><button type="button" data-a="eye" data-v="${id}" aria-label="แสดงรหัสผ่าน" aria-pressed="false" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;background:none;color:#94a3b8">${IC.eye}</button></div></div>`;
+const tf=(id,l,t,ph,val='',ex='')=>`<div><label for="${id}" style="font-size:12px;font-weight:600;color:#cbd5e1;display:block;margin-bottom:6px">${l}</label><input id="${id}" class="inp" type="${t}" placeholder="${ph}" value="${esc(val)}" ${ex}></div>`;
+const authShell=(body,sub)=>`<div style="background:#0f172a;color:#f1f5f9;min-height:100vh;display:flex;flex-direction:column"><div style="flex:1;display:flex;align-items:center;justify-content:center;padding:28px 16px"><div style="max-width:448px;width:100%;display:flex;flex-direction:column;gap:22px"><div style="text-align:center"><img src="${LOGO}" width="72" height="72" alt="โลโก้ Wednesday Wellness" style="margin:0 auto;display:block;border-radius:20px"><h1 style="margin:14px 0 6px;font-size:28px;font-weight:800">Wednesday Wellness</h1><p style="margin:0 auto;max-width:320px;font-size:14px;color:#94a3b8">${sub}</p></div>${body}<p style="margin:0;text-align:center;font-size:11px;color:#94a3b8">เฉพาะพนักงานที่มีอีเมล @${COMPANY_DOMAIN}</p></div></div></div>`;
+const errp=()=>S.loginErr?`<p role="alert" style="margin:0;font-size:13px;color:#fda4af">${esc(S.loginErr)}</p>`:'';
+const formCss='background:#1e293b;border:1px solid #334155;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:16px';
+function setup(){return authShell(`<div style="${formCss}"><b>ยังไม่ได้ตั้งค่า Firebase</b><p style="margin:0;font-size:14px;color:#cbd5e1;line-height:1.7">เปิดไฟล์นี้ในโปรแกรมแก้ไขโค้ด แล้วใส่ค่าใน <code>CONFIG</code> ที่ต้นสคริปต์</p></div>`,'ระบบจองคิวนวดผ่อนคลายสวัสดิการพนักงาน')}
+function login(){if(!CONFIG.apiKey)return setup();
+ return authShell(`<form id="lf" style="${formCss}"><b style="font-size:15px">เข้าสู่ระบบ</b>${tf('em','อีเมลองค์กร','email',`name@${COMPANY_DOMAIN}`,S.rv.email,'autocomplete="username"')}${pwf('pw','รหัสผ่าน','current-password')}<div style="text-align:right;margin-top:-8px"><button type="button" data-a="forgot" style="border:0;background:none;color:#5eead4;font-size:13px;font-weight:600;padding:6px 0;text-decoration:underline;text-underline-offset:3px">ลืมรหัสผ่าน?</button></div>${errp()}<button class="bt" style="height:46px;font-size:15px" type="submit">เข้าสู่ระบบ →</button><button type="button" data-a="reg" class="ol" style="background:none;color:#cbd5e1;border-color:#475569">ยังไม่มีบัญชี? สมัครสมาชิก</button></form>`,'ระบบจองคิวนวดผ่อนคลายสวัสดิการพนักงานประจำวันพุธ (รอบละ 30 นาที)')}
+function forgot(){const em=S.rv.email||'',bk='<button type="button" data-a="back" class="ol" style="background:none;color:#cbd5e1;border-color:#475569">← กลับไปเข้าสู่ระบบ</button>';
+ const body=S.fsent?`<div style="${formCss}"><b style="font-size:15px">ตรวจสอบอีเมลของคุณ</b><p role="status" style="margin:0;font-size:14px;color:#cbd5e1;line-height:1.7">หากมีบัญชีสำหรับ <b style="color:#fff;word-break:break-all">${esc(S.fsent)}</b> ระบบได้ส่งลิงก์ตั้งรหัสผ่านใหม่ไปให้แล้ว<br>ถ้าไม่พบในกล่องจดหมาย ลองดูในโฟลเดอร์จดหมายขยะ (Junk/Spam)</p><button type="button" data-a="back" class="bt" style="height:46px;font-size:15px">กลับไปเข้าสู่ระบบ</button></div>`
+ :`<form id="ff" style="${formCss}"><b style="font-size:15px">ลืมรหัสผ่าน</b><p style="margin:0;font-size:13px;color:#94a3b8;line-height:1.7">กรอกอีเมลองค์กรที่ใช้สมัคร เราจะส่งลิงก์สำหรับตั้งรหัสผ่านใหม่ให้ทางอีเมล</p>${tf('fe','อีเมลองค์กร','email',`name@${COMPANY_DOMAIN}`,em,'autocomplete="username" required')}${errp()}<button class="bt" style="height:46px;font-size:15px" type="submit" ${S.fb?'disabled':''}>${S.fb?'กำลังส่ง…':'ส่งลิงก์ตั้งรหัสผ่านใหม่'}</button>${bk}</form>`;
+ return authShell(body,'รีเซ็ตรหัสผ่านผ่านอีเมลองค์กร')}
+function register(){const v=S.rv||{};
+ return authShell(`<form id="rf" style="${formCss}"><b style="font-size:15px">สมัครสมาชิก</b>${tf('rn','ชื่อ-นามสกุล','text','สมชาย ใจดี',v.name,'autocomplete="name"')}${tf('re','อีเมลองค์กร','email',`name@${COMPANY_DOMAIN}`,v.email,'autocomplete="username"')}
+<div><label for="rd" style="font-size:12px;font-weight:600;color:#cbd5e1;display:block;margin-bottom:6px">แผนก</label><select id="rd" class="inp"><option value="">เลือกแผนก</option>${DEPTS.map(d=>`<option ${v.department===d?'selected':''}>${d}</option>`).join('')}</select></div>
+${pwf('rp','รหัสผ่าน (อย่างน้อย 6 ตัว)','new-password')}${pwf('rp2','ยืนยันรหัสผ่าน','new-password')}${errp()}<button class="bt" type="submit" style="height:46px;font-size:15px">สมัครสมาชิกและเข้าใช้งาน</button><button type="button" data-a="back" class="ol" style="background:none;color:#cbd5e1;border-color:#475569">มีบัญชีแล้ว? เข้าสู่ระบบ</button></form>`,'สมัครแล้วเข้าใช้งานได้ทันที')}
+
+function head(){const u=S.user,st=staff(u),adm=u.role==='admin',bs=!('Notification' in window)?'':Notification.permission==='granted'?'เปิดแจ้งเตือนแล้ว':Notification.permission==='denied'?'แจ้งเตือนถูกบล็อก':'เปิดแจ้งเตือน';
+ const tabs=adm?[['admin','แดชบอร์ดหลังบ้าน',IC.shd],['stats','สถิติ & รายงาน',IC.chart],['users','จัดการผู้ใช้',IC.user],['profile','โปรไฟล์',IC.user]]:st?[['admin','ตารางนวดวันนี้',IC.shd],['profile','โปรไฟล์',IC.user]]:[['book','จองคิวนวด',IC.cal],['my','คิวของฉัน',IC.clk],['profile','โปรไฟล์',IC.user]];
+ return`<header class="hd"><div class="w row" style="justify-content:space-between;padding-top:10px;padding-bottom:10px;flex-wrap:nowrap"><div class="row" style="gap:10px;flex-wrap:nowrap;min-width:0"><img src="${LOGO}" width="40" height="40" alt="โลโก้ Wednesday Wellness" style="border-radius:12px;flex:none"><div style="min-width:0"><div style="font-weight:700;font-size:16px;white-space:nowrap">Wednesday Wellness</div><div class="hsub" style="font-size:12px;color:#475569">จองคิวนวดพนักงานประจำวันพุธ</div></div></div>
+<div class="row" style="gap:8px;flex-wrap:nowrap"><button data-a="tab" data-v="profile" aria-label="โปรไฟล์ของฉัน" style="border:0;background:none;display:flex;gap:8px;align-items:center;padding:2px;border-radius:12px;text-align:right"><span style="min-width:0"><b style="font-size:13px;display:block;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(u.name)}${st?` <span class="pill" style="background:#f3e8ff;color:#7e22ce;font-size:10px;padding:1px 7px">${adm?'Admin':'หมอนวด'}</span>`:''}</b><span class="hdept" style="font-size:12px;color:#475569">${esc(u.department)}</span></span>${avatar(u,38)}</button>
+${bs?`<button class="hbell" data-a="perm" title="${bs}" aria-label="${bs}" style="height:38px;border-radius:12px;border:1px solid #e2e8f0;background:#f1f5f9;color:${bs==='เปิดแจ้งเตือนแล้ว'?'#047857':'#475569'};padding:0 10px;display:flex;gap:6px;align-items:center;font-size:12px;font-weight:600">${IC.bell}<span>${bs}</span></button>`:''}
+<button data-a="logout" aria-label="ออกจากระบบ" style="width:38px;height:38px;border-radius:12px;border:1px solid #e2e8f0;background:#f1f5f9;color:#475569;display:flex;align-items:center;justify-content:center">${IC.out}</button></div></div></header>
+<div class="nv"><div class="w row" style="gap:6px">${tabs.map(([k,n,i])=>`<button class="tab" data-a="tab" data-v="${k}" style="${S.tab===k?`border-bottom-color:${k==='book'||k==='my'||k==='profile'?'#047857':'#7e22ce'};color:${k==='book'||k==='my'||k==='profile'?'#047857':'#7e22ce'};font-weight:600`:''}">${i}${n}</button>`).join('')}</div></div>`}
+
+const dateSel=()=>`<select data-a="date" aria-label="เลือกวันพุธ" style="font-size:15px;font-weight:700;border:0;background:none;color:#1e293b;cursor:pointer;max-width:100%">${wednesdays(8).map(d=>`<option value="${d}" ${d===S.date?'selected':''}>${thai(d)}</option>`).join('')}</select>`;
+const dateChips=()=>`<div class="chips" role="tablist" aria-label="เลือกวันพุธ">${wednesdays(8).map((d,i)=>{const x=pd(d);return`<button class="chip" role="tab" aria-selected="${d===S.date}" data-a="day" data-v="${d}"><small>${x.toLocaleDateString('th-TH',{month:'short'})}</small><b>${x.getDate()}</b><small>${i===0?'ใกล้สุด':'พุธ'}</small></button>`}).join('')}</div>`;
+
+function hero(){const b=nextQ(),hr=new Date().getHours(),g=hr<12?'สวัสดีตอนเช้า':hr<17?'สวัสดีตอนบ่าย':'สวัสดีตอนเย็น';
+ return`<section class="hero"><div><p style="margin:0;opacity:.9;font-size:13px">${g}</p><h1 style="margin:2px 0 0;font-size:26px;font-weight:800">${esc(S.user.name.split(' ')[0])}</h1><p style="margin:8px 0 0;font-size:13px">${b?`คิวถัดไป ${thai(b.date,1)} · ${b.startTime} - ${b.endTime} น.`:'ยังไม่มีคิวที่กำลังจะมาถึง เลือกวันและรอบด้านล่างได้เลย'}</p></div>${b?`<div class="cdw"><span style="font-size:11px">เริ่มในอีก</span><b id="cd" data-t="${start(b).getTime()}"></b></div>`:''}</section>`}
+
+function card(s){const cap=s.capacity||CAPACITY,n=s.bookedCount||0,free=Math.max(0,cap-n),mine=S.mine.some(b=>b.slotId===s.slotId&&ACTIVE.includes(b.status)),pm=s.startTime>='12:00';
+ const k=mine?'m':isPast(s)?'g':free===0?'b':free<=3?'w':pm?'t':'';
+ const lab=mine?'คิวของคุณ':isPast(s)?'ผ่านไปแล้ว':free===0?'เต็มแล้ว':free<=3?`เหลือ ${free} ที่ · ใกล้เต็ม`:`เหลือ ${free} ที่`;
+ return`<button class="s ${k}" ${k===''||k==='t'||k==='w'?'':'disabled'} data-a="slot" data-v="${esc(s.slotId)}" aria-label="${s.startTime} ถึง ${s.endTime} ${lab}"><span class="row" style="justify-content:space-between;width:100%;flex-wrap:nowrap;gap:6px"><span>${s.startTime} - ${s.endTime}</span>${mine?'<span class="pill" style="background:#b45309;color:#fff;font-size:10px;padding:2px 6px">คิวของคุณ</span>':`<span style="font-size:11px;font-weight:600">${n}/${cap}</span>`}</span><span class="l">${lab}</span><i class="pb"><i style="width:${Math.round(n/cap*100)}%"></i></i></button>`}
+const sec=(dot,t,sub,items)=>`<div class="cd" style="padding:20px;display:flex;flex-direction:column;gap:16px"><div class="row" style="border-bottom:1px solid #f1f5f9;padding-bottom:12px"><i style="width:10px;height:10px;border-radius:50%;background:${dot}"></i><b style="font-size:14px">${t}</b><span style="font-size:12px;color:#475569">${sub}</span><span class="pill" style="margin-left:auto;background:#ecfdf5;color:#047857">รอบละ 30 นาที · ${CAPACITY} ที่/รอบ</span></div><div class="g6">${items.map(card).join('')}</div></div>`;
+
+function book(){const m=mineHere(),leg=[['#10b981','ว่าง'],['#f59e0b','ใกล้เต็ม (≤3 ที่)'],['#e11d48','เต็มแล้ว'],['#b45309','คิวของคุณ']].map(([c,l])=>`<span class="row" style="gap:6px;font-size:12px;color:#475569"><i style="width:12px;height:12px;border-radius:50%;background:${c}"></i>${l}</span>`).join('');
+ return`${hero()}<div class="cd" style="padding:18px 20px;background:#ecfdf5;border-color:#a7f3d0"><div class="row" style="justify-content:space-between;gap:16px"><div class="row" style="align-items:flex-start;flex:1;min-width:240px;flex-wrap:nowrap"><div style="width:40px;height:40px;border-radius:12px;background:#d1fae5;color:#047857;display:flex;align-items:center;justify-content:center;flex:none">${IC.shd}</div><div><b style="font-size:14px">โควตาสวัสดิการนวดสัปดาห์นี้</b><p style="margin:2px 0 0;font-size:12px;color:#334155">จองได้ <b>1 ครั้ง/สัปดาห์ (รอบละ 30 นาที)</b> แต่ละรอบรับได้ ${CAPACITY} ท่าน</p></div></div><span class="pill" style="${m?'background:#fef3c7;color:#92400e;border:1px solid #fcd34d':'background:#047857;color:#fff'}">${m?'ใช้สิทธิ์แล้ว (1/1)':'ยังไม่ได้ใช้สิทธิ์ (0/1)'}</span></div></div>
+<div class="cd" style="padding:16px 20px"><div class="row" style="justify-content:space-between"><b style="font-size:15px">${thai(S.date)}</b><div class="row" style="gap:14px">${leg}</div></div>${dateChips()}</div>
+${S.slots.length?sec('#fbbf24','ช่วงเช้า','09:00 - 12:00 น. (6 รอบ)',S.slots.filter(s=>s.startTime<'12:00'))+sec('#2dd4bf','ช่วงบ่าย','13:00 - 16:00 น. (6 รอบ)',S.slots.filter(s=>s.startTime>='12:00')):'<div class="cd" style="padding:32px;text-align:center;font-size:14px;color:#475569">ยังไม่เปิดรอบนวดสำหรับวันนี้ — โปรดรอผู้ดูแลเปิดรอบ</div>'}`}
+
+const STX={confirmed:['จองแล้ว','#ecfdf5','#065f46'],checked_in:['นวดเสร็จสิ้น','#d1fae5','#065f46'],no_show:['ไม่มาตามนัด','#ffe4e6','#be123c'],cancelled:['ยกเลิกแล้ว','#f1f5f9','#566074']};
+const chip=s=>`<span class="pill" style="background:${STX[s][1]};color:${STX[s][2]}">${STX[s][0]}</span>`;
+function my(){const b=nextQ(),hist=S.mine.filter(x=>x!==b).sort((x,y)=>(y.date+y.startTime).localeCompare(x.date+x.startTime)).slice(0,8);
+ const top=b?`<div style="background:linear-gradient(135deg,#047857,#0f766e);color:#fff;border-radius:16px;padding:22px"><div class="row" style="justify-content:space-between;align-items:flex-start"><div><span class="pill" style="background:rgba(6,78,59,.6);color:#d1fae5;font-size:11px">สิทธิ์การนวดประจำสัปดาห์</span><h2 style="margin:10px 0 4px;font-size:25px;font-weight:800">${b.startTime} - ${b.endTime} น.</h2><div style="font-size:13px;color:#d1fae5">${thai(b.date)} (นวด 30 นาที)</div></div><div style="text-align:right"><div style="font-size:12px;color:#d1fae5">เริ่มในอีก</div><b id="cd" data-t="${start(b).getTime()}" style="font-size:24px;font-variant-numeric:tabular-nums"></b></div></div></div>
+<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:16px;font-size:12px;color:#78350f"><b>ข้อปฏิบัติ:</b><ul style="margin:6px 0 0;padding-left:18px;line-height:1.7"><li>ไปถึงห้องนวดก่อนเวลา 5 นาที</li><li>ระบบเด้งแจ้งเตือนก่อนถึงคิว ${ALERT_MINUTES.join(' และ ')} นาที (ต้องเปิดหน้านี้ค้างไว้)</li><li>ยกเลิกได้ล่วงหน้าอย่างน้อย 1 ชั่วโมง เพื่อคืนที่ให้เพื่อนพนักงาน</li></ul></div>`
+ :`<div style="text-align:center;padding:36px 0"><b style="font-size:15px">คุณยังไม่มีคิวนวดที่กำลังจะมาถึง</b><p style="font-size:13px;color:#475569;margin:6px 0 16px">ใช้สิทธิ์จองได้ที่หน้าจองคิวนวด</p><button class="bt" data-a="tab" data-v="book">ไปจองคิวนวด</button></div>`;
+ return`<div style="max-width:704px;margin:0 auto;width:100%;display:flex;flex-direction:column;gap:20px"><div class="cd" style="padding:22px;display:flex;flex-direction:column;gap:18px"><div class="row" style="justify-content:space-between"><b style="font-size:16px">คิวนวดของฉัน</b><div class="row" style="gap:8px"><button class="ol" data-a="test">ทดสอบการแจ้งเตือน</button>${b?'<button class="ol" data-a="cancel" style="border-color:#fda4af;color:#be123c">ยกเลิกคิวนี้</button>':''}</div></div>${top}</div>
+<div class="cd" style="padding:6px 20px 12px"><b style="font-size:14px;display:block;padding:14px 0 6px">ประวัติการจอง</b>${hist.length?hist.map(x=>`<div class="row" style="justify-content:space-between;padding:11px 0;border-top:1px solid #f1f5f9;font-size:14px"><span>${thai(x.date,1)} · ${x.startTime}-${x.endTime}</span>${chip(x.status)}</div>`).join(''):'<p style="font-size:13px;color:#475569;margin:6px 0">ยังไม่มีประวัติ</p>'}</div></div>`}
+
+function admin(){const cap=S.slots.reduce((a,s)=>a+(s.capacity||CAPACITY),0),act=S.bookings.filter(b=>b.status!=='cancelled'),done=act.filter(b=>b.status==='checked_in').length,rate=cap?Math.round(act.length/cap*100):0;
+ const st=(l,v,s,c)=>`<div class="cd" style="padding:16px"><div style="font-size:12px;color:#475569">${l}</div><div style="font-size:26px;font-weight:800;color:${c}">${v}</div><div style="font-size:11px;color:#475569">${s}</div></div>`;
+ const att=b=>`<div class="row" style="justify-content:space-between;padding:8px 0;gap:8px"><div class="row" style="gap:10px;flex-wrap:nowrap;min-width:0"><span class="av" style="width:32px;height:32px;background:#d1fae5;color:#065f46;font-size:13px">${esc((b.userName||'?')[0])}</span><div style="min-width:0"><b style="font-size:14px;display:block">${esc(b.userName)}</b><span style="font-size:12px;color:#475569">${esc(b.userDept)}</span></div></div><div class="row" style="gap:8px">${b.status==='confirmed'?`<button class="bt" data-a="ci" data-v="${esc(b.id)}" style="padding:7px 12px;font-size:12px;border-radius:10px">เช็กอิน</button><button class="ol" data-a="ns" data-v="${esc(b.id)}" style="padding:7px 12px;font-size:12px;border-radius:10px;color:#be123c;border-color:#fda4af">No-show</button>`:chip(b.status)}</div></div>`;
+ const blk=s=>{const at=act.filter(b=>b.slotId===s.slotId).sort((a,b)=>String(a.userName).localeCompare(String(b.userName))),n=s.bookedCount||0,c=s.capacity||CAPACITY;
+  return`<div style="border-top:1px solid #f1f5f9;padding:14px 20px"><div class="row" style="justify-content:space-between"><b style="font-size:14px;background:#f1f5f9;padding:5px 12px;border-radius:8px">${s.startTime} - ${s.endTime}</b><span class="pill" style="${n>=c?'background:#ffe4e6;color:#be123c':'background:#ecfdf5;color:#047857'}">${n}/${c} ที่${n>=c?' · เต็ม':''}</span></div>${at.length?at.map(att).join(''):'<p style="margin:8px 0 0;font-size:12px;color:#64748b;font-style:italic">ยังไม่มีผู้จอง</p>'}</div>`};
+ return`<div class="stg">${st('รอบนวดทั้งหมด',S.slots.length+' รอบ',`${CAPACITY} ที่/รอบ · ${thai(S.date,1)}`,'#1e293b')}${st('ผู้จองทั้งหมด',`${act.length}/${cap}`,'ที่นั่งที่ถูกจอง','#047857')}${st('เช็กอินแล้ว',done+' คน','มานวดจริง','#0f766e')}${st('Utilization',rate+'%','ที่นั่งที่ถูกใช้','#7e22ce')}</div>
+<div class="cd" style="padding:20px"><div class="row" style="justify-content:space-between"><div><b style="font-size:14px">จัดการตารางนวดประจำวันพุธ</b><p style="margin:2px 0 0;font-size:12px;color:#475569">เลือกวัน: ${dateSel()}</p></div>${S.user.role==='admin'?'<button data-a="gen" class="bt" style="background:#7e22ce">Auto-Generate 12 Slots</button>':''}</div></div>
+<div class="cd" style="overflow:hidden"><div class="row" style="justify-content:space-between;padding:16px 20px"><b style="font-size:14px">ตารางคิวนวด Real-time</b><span style="font-size:12px;color:#475569">อัปเดตอัตโนมัติ</span></div>${S.slots.length?S.slots.map(blk).join(''):'<div style="padding:24px;text-align:center;font-size:13px;color:#475569;border-top:1px solid #f1f5f9">ยังไม่มีรอบของวันนี้ — กด Auto-Generate</div>'}</div>`}
+
+const monthRange=m=>{const[y,mo]=m.split('-').map(Number);return[`${m}-01`,`${m}-${pad(new Date(y,mo,0).getDate())}`]};
+let rUnsub=null;const watchRange=()=>{rUnsub&&rUnsub();const[a,b]=monthRange(S.month);rUnsub=store.subscribeRange(a,b,r=>{S.range=r;render()})};
+function stats(){const{slots,bookings}=S.range,U=bookings.filter(b=>ACTIVE.includes(b.status)),done=U.filter(b=>b.status==='checked_in').length,ns=U.filter(b=>b.status==='no_show').length,cap=slots.reduce((a,s)=>a+(s.capacity||CAPACITY),0),rate=cap?Math.round(U.length/cap*100):0,att=done+ns?Math.round(done/(done+ns)*100):0;
+ const bd={};slots.forEach(s=>{const o=bd[s.date]||(bd[s.date]={c:0,u:0});o.c+=s.capacity||CAPACITY});U.forEach(b=>{if(bd[b.date])bd[b.date].u++});
+ const dp={};U.forEach(b=>{dp[b.userDept]=(dp[b.userDept]||0)+1});const dl=Object.entries(dp).sort((a,b)=>b[1]-a[1]).slice(0,6),mx=dl[0]?dl[0][1]:1;
+ const ms=Array.from({length:6},(_,i)=>{const d=new Date();d.setDate(1);d.setMonth(d.getMonth()-i);return ds(d).slice(0,7)});
+ const kp=(l,v,s,c)=>`<div class="cd" style="padding:16px"><div style="font-size:12px;color:#475569">${l}</div><div style="font-size:26px;font-weight:800;color:${c}">${v}</div><div style="font-size:11px;color:#475569">${s}</div></div>`;
+ const bar=(l,p,t,c)=>`<div class="br"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${l}</span><div style="background:#f1f5f9;border-radius:99px;height:14px"><div style="width:${p}%;height:100%;border-radius:99px;background:${c}"></div></div><b style="text-align:right">${t}</b></div>`;
+ return`<div class="cd" style="padding:20px"><div class="row" style="justify-content:space-between"><div><b style="font-size:14px">สถิติและรายงานประจำเดือน</b><p style="margin:2px 0 0;font-size:12px;color:#475569">เลือกเดือน: <select data-a="month" aria-label="เลือกเดือน" style="font-size:14px;font-weight:700;border:0;background:none;color:#1e293b;cursor:pointer">${ms.map(m=>`<option value="${m}" ${m===S.month?'selected':''}>${pd(m+'-01').toLocaleDateString('th-TH',{month:'long',year:'numeric'})}</option>`).join('')}</select></p></div><button class="bt" data-a="csv" style="background:#7e22ce" ${bookings.length?'':'disabled'}>Export CSV (เปิดใน Excel ได้)</button></div></div>
+<div class="stg">${kp('ความจุทั้งหมด',cap+' ที่',`${slots.length} รอบ · ${Object.keys(bd).length} วันพุธ`,'#1e293b')}<div class="cd" style="padding:16px;display:flex;gap:14px;align-items:center"><div class="ring" style="--p:${rate}"><b>${rate}%</b></div><div><div style="font-size:12px;color:#475569">Utilization Rate</div><div style="font-size:11px;color:#475569">จอง ${U.length} จาก ${cap} ที่</div></div></div>${kp('มาตามนัด',att+'%',`นวดจริง ${done} · ไม่มา ${ns}`,'#0f766e')}${kp('แผนกที่มานวดมากที่สุด',dl[0]?esc(dl[0][0].split(' (')[0]):'-',dl[0]?dl[0][1]+' ครั้ง':'ยังไม่มีข้อมูล','#7e22ce')}</div>
+${slots.length?`<div class="cd" style="padding:20px;display:flex;flex-direction:column;gap:12px"><b style="font-size:14px">Utilization รายวันพุธ (${CAPACITY*12} ที่/วัน)</b>${Object.entries(bd).sort().map(([d,o])=>bar(thai(d,1),Math.min(100,Math.round(o.u/o.c*100)),`${o.u}/${o.c} (${Math.round(o.u/o.c*100)}%)`,'#10b981')).join('')}</div>
+<div class="cd" style="padding:20px;display:flex;flex-direction:column;gap:12px"><b style="font-size:14px">แผนกที่มานวดมากที่สุด</b>${dl.map(([n,c])=>bar(esc(n),Math.round(c/mx*100),c+' ครั้ง','#7e22ce')).join('')||'<span style="font-size:13px;color:#475569">ยังไม่มีการจอง</span>'}</div>`:'<div class="cd" style="padding:32px;text-align:center;font-size:14px;color:#475569">ยังไม่มีข้อมูลรอบนวดในเดือนนี้</div>'}`}
+function csv(){const q=v=>{v=String(v??'');if(/^[=+\-@]/.test(v))v="'"+v;return`"${v.replace(/"/g,'""')}"`};
+ const r=[...S.range.bookings].sort((a,b)=>(a.date+a.startTime).localeCompare(b.date+b.startTime));
+ const out=['วันที่,เวลา,ชื่อ,แผนก,สถานะ',...r.map(b=>[b.date,`${b.startTime}-${b.endTime}`,b.userName,b.userDept,STX[b.status]?STX[b.status][0]:b.status].map(q).join(','))].join('\r\n');
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+out],{type:'text/csv;charset=utf-8'}));a.download=`massage-bookings-${S.month}.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+
+function usersPage(){const L=[...S.users].sort((a,b)=>String(a.name).localeCompare(String(b.name)));
+ const row=u=>{const me=u.uid===S.user.uid;return`<div class="row" style="justify-content:space-between;padding:12px 20px;border-top:1px solid #f1f5f9"><div class="row" style="gap:12px;min-width:220px;flex-wrap:nowrap">${avatar(u,38)}<div style="min-width:0"><b style="font-size:14px;display:block">${esc(u.name)}${me?' (คุณ)':''}</b><span style="font-size:12px;color:#475569;word-break:break-all">${esc(u.department||'-')} · ${esc(u.email||'')}</span></div></div>
+<select aria-label="บทบาทของ ${esc(u.name)}" data-a="role" data-v="${esc(u.uid)}" ${me?'disabled':''} style="height:38px;border-radius:10px;border:1px solid #cbd5e1;padding:0 8px;font-size:13px">${[['employee','พนักงาน'],['therapist','หมอนวด'],['admin','แอดมิน']].map(([v,l])=>`<option value="${v}" ${u.role===v?'selected':''}>${l}</option>`).join('')}</select></div>`};
+ return`<div class="cd" style="overflow:hidden"><div style="padding:16px 20px"><b style="font-size:14px">จัดการผู้ใช้และบทบาท</b><p style="margin:2px 0 0;font-size:12px;color:#475569">กำหนดบทบาท พนักงาน / หมอนวด / แอดมิน · ทั้งหมด ${L.length} บัญชี</p></div>${L.map(row).join('')||'<div style="padding:24px;text-align:center;font-size:13px;color:#475569">ยังไม่มีผู้ใช้</div>'}</div>`}
+
+function profile(){const d=S.pd||(S.pd={}),u=S.user,pv={...u,...d},lab=t=>`<label style="font-size:12px;font-weight:600;color:#475569;display:block;margin-bottom:6px">${t}</label>`;
+ return`<div class="cd" style="padding:22px;max-width:720px;margin:0 auto;width:100%;display:flex;flex-direction:column;gap:20px"><b style="font-size:16px">โปรไฟล์ของฉัน</b>
+<div class="row" style="gap:18px">${avatar(pv,96)}<div style="display:flex;flex-direction:column;gap:10px"><div class="row" style="gap:8px"><button class="ol" data-a="pphoto">${IC.cam} ${pv.photoURL?'เปลี่ยนรูป':'เพิ่มรูปโปรไฟล์'}</button>${pv.photoURL?'<button class="ol" data-a="prem" style="color:#be123c">ลบรูป</button>':''}</div><div><span style="font-size:12px;color:#475569;display:block;margin-bottom:6px">สีพื้นหลังโปรไฟล์ (เมื่อไม่มีรูป)</span><div class="row" style="gap:8px">${COLORS.map(c=>`<button class="sw" data-a="pcol" data-v="${c}" aria-label="เลือกสี ${c}" aria-pressed="${(pv.avatarColor||'#047857')===c}" style="background:${c}"></button>`).join('')}</div></div></div></div>
+<div class="stg"><div>${lab('ชื่อ-นามสกุล')}<input class="fi" data-pf="name" value="${esc(pv.name)}" maxlength="60" autocomplete="name"></div><div>${lab('แผนก')}<select class="fi" data-pf="department">${[...new Set([pv.department,...DEPTS].filter(Boolean))].map(x=>`<option ${pv.department===x?'selected':''}>${esc(x)}</option>`).join('')}</select></div><div>${lab('เบอร์โทรศัพท์')}<input class="fi" data-pf="phone" value="${esc(pv.phone||'')}" maxlength="20" inputmode="tel" autocomplete="tel"></div><div>${lab('อีเมล (แก้ไขไม่ได้)')}<input class="fi" value="${esc(u.email)}" disabled style="background:#f1f5f9;color:#566074"></div></div>
+<div>${lab('แนะนำตัวสั้น ๆ (ไม่เกิน 120 ตัวอักษร)')}<textarea class="fi" data-pf="bio" rows="3" maxlength="120" placeholder="เช่น ชอบนวดบ่า/ไหล่ ทำงานที่ชั้น 5">${esc(pv.bio||'')}</textarea></div>
+<div class="row" style="justify-content:flex-end"><button class="bt" data-a="psave" style="padding:12px 24px;font-size:14px">บันทึกโปรไฟล์</button></div></div>`}
+
+function modal(){const s=S.slots.find(x=>x.slotId===S.sel);if(!s)return'';const free=Math.max(0,(s.capacity||CAPACITY)-(s.bookedCount||0));
+ const r=(a,b,k)=>`<div class="row" style="justify-content:space-between;${k===2?'':'border-bottom:1px solid #a7f3d0;padding-bottom:10px'}"><span style="font-size:12px;color:#475569">${a}</span><b style="font-size:${k===1?15:13}px;color:${k===1?'#047857':'#1e293b'}">${b}</b></div>`;
+ return`<div data-a="close" data-o="1" style="position:fixed;inset:0;z-index:40;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center;padding:16px"><div role="dialog" aria-modal="true" aria-labelledby="mt" style="background:#fff;border-radius:24px;max-width:448px;width:100%;padding:24px;display:flex;flex-direction:column;gap:18px">
+<div class="row" style="justify-content:space-between;align-items:flex-start;flex-wrap:nowrap;border-bottom:1px solid #f1f5f9;padding-bottom:12px"><div><b id="mt" style="font-size:16px">ยืนยันการจองคิวนวด</b><p style="margin:2px 0 0;font-size:12px;color:#475569">ตรวจสอบรายละเอียดรอบเวลานวด</p></div><button data-a="close" aria-label="ปิด" style="width:36px;height:36px;border-radius:50%;border:0;background:#f1f5f9;color:#475569;font-size:20px;flex:none">×</button></div>
+<div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px">${r('วันบริการ:',thai(s.date))}${r('รอบเวลา (30 นาที):',`${s.startTime} - ${s.endTime} น.`,1)}${r('ที่ว่างเหลือ:',`${free} จาก ${s.capacity||CAPACITY} ที่`)}${r('ชื่อผู้จอง:',`${esc(S.user.name)}`,2)}</div>
+${S.err?`<p role="alert" style="margin:0;font-size:13px;color:#be123c;background:#fff1f2;border-radius:10px;padding:10px">${esc(S.err)}</p>`:'<p style="margin:0;font-size:12px;color:#475569;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:12px"><b>หมายเหตุ:</b> ใช้สิทธิ์จองได้ 1 ครั้ง/สัปดาห์ ยกเลิกได้ล่วงหน้าอย่างน้อย 1 ชั่วโมง</p>'}
+<div class="row" style="gap:12px;flex-wrap:nowrap"><button class="ol" data-a="close" style="flex:1;height:46px">ยกเลิก</button><button class="bt" data-a="confirm" ${S.busy?'disabled':''} style="flex:1;height:46px;font-size:14px">${S.busy?'กำลังจอง…':'ยืนยันจองคิว'}</button></div></div></div>`}
+
+function render(){const a=$('#app'),fa=document.activeElement,fid=fa&&fa.id,fv=fa&&fa.value;
+ if(!S.ready){a.innerHTML='<div style="min-height:100vh;display:grid;place-items:center;font-size:14px">กำลังโหลด…</div>';return}
+ if(!S.user){a.innerHTML=S.forgot?forgot():S.reg?register():login();return}
+ a.innerHTML=`<div style="min-height:100vh;display:flex;flex-direction:column">${head()}<main class="w" style="padding-top:22px;padding-bottom:24px;display:flex;flex-direction:column;gap:20px;flex:1">${{admin,stats,users:usersPage,my,profile,book}[S.tab]()}</main>${foot}</div>${modal()}`;
+ if(fid){const n=document.getElementById(fid);if(n&&fv!==undefined){n.value=fv;n.focus()}}tick()}
+function tick(){const e=$('#cd');if(!e)return;const ms=+e.dataset.t-Date.now();if(ms<=0){e.textContent='ถึงเวลาแล้ว';return}
+ const h=Math.floor(ms/HOUR),m=Math.floor(ms%HOUR/60000),s=Math.floor(ms%60000/1000);e.textContent=(h>=24?Math.floor(h/24)+' วัน ':'')+`${pad(h%24)}:${pad(m)}:${pad(s)}`}
+setInterval(tick,1000);setInterval(checkAlerts,15000);
+
+/* ============ Data streams ============ */
+let uUnsub=null,sUnsub=null,bUnsub=null,dataOn=false,usersOn=false;
+const watch=()=>{sUnsub&&sUnsub();bUnsub&&bUnsub();S.slots=[];S.bookings=[];sUnsub=store.subscribe(S.date,s=>{S.slots=s;render()});if(staff(S.user))bUnsub=store.subscribeBookings(S.date,b=>{S.bookings=b;render()})};
+function startData(){if(!dataOn){dataOn=true;watch();store.subscribeMine(S.user.uid,m=>{S.mine=m;render();checkAlerts()})}
+ if(S.user.role==='admin'&&!usersOn){usersOn=true;store.subscribeUsers(l=>{S.users=l;render()})}}
+const slotById=id=>S.slots.find(x=>x.slotId===id);
+async function thumb(file){const img=await new Promise((ok,no)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=no;i.src=URL.createObjectURL(file)});
+ const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d'),s=Math.min(img.width,img.height);x.drawImage(img,(img.width-s)/2,(img.height-s)/2,s,s,0,0,256,256);URL.revokeObjectURL(img.src);return c.toDataURL('image/jpeg',.85)}
+
+/* ============ Events ============ */
+document.addEventListener('submit',async e=>{const id=e.target.id;if(!['lf','rf','ff'].includes(id))return;e.preventDefault();const v=i=>$('#'+i).value.trim(),ok=m=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m)&&m.endsWith('@'+COMPANY_DOMAIN);
+ if(id==='ff'){const em=v('fe').toLowerCase();S.rv={...S.rv,email:em};
+  if(!ok(em)){S.loginErr=`ใช้ได้เฉพาะอีเมล @${COMPANY_DOMAIN} เท่านั้น`;return render()}
+  if(S.fb)return;S.fb=true;S.loginErr='';render();
+  try{await store.reset(em);S.fsent=em}catch(x){if(x.code==='auth/user-not-found')S.fsent=em;else S.loginErr=authMsg(x)}
+  S.fb=false;render();return}
+ if(id==='lf'){const em=v('em').toLowerCase(),pw=$('#pw').value;S.rv={email:em};
+  if(!ok(em)){S.loginErr=`ใช้ได้เฉพาะอีเมล @${COMPANY_DOMAIN} เท่านั้น`;return render()}if(!pw){S.loginErr='กรุณากรอกรหัสผ่าน';return render()}
+  S.loginErr='';try{await store.login(em,pw)}catch(x){S.loginErr=authMsg(x);render()}return}
+ const p={name:v('rn'),email:v('re').toLowerCase(),department:v('rd'),password:$('#rp').value};S.rv={name:p.name,email:p.email,department:p.department};
+ const bad=!p.name?'กรุณากรอกชื่อ-นามสกุล':!ok(p.email)?`ใช้ได้เฉพาะอีเมล @${COMPANY_DOMAIN} เท่านั้น`:!p.department?'กรุณาเลือกแผนก':p.password.length<6?'รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร':p.password!==$('#rp2').value?'ยืนยันรหัสผ่านไม่ตรงกัน':'';
+ S.loginErr=bad;if(bad)return render();try{await store.register(p)}catch(x){S.loginErr=authMsg(x);console.error(x);render()}});
+document.addEventListener('input',e=>{const f=e.target.dataset.pf;if(f)(S.pd||(S.pd={}))[f]=e.target.value});
+document.addEventListener('change',async e=>{const t=e.target,a=t.dataset.a;
+ if(a==='date'){S.date=t.value;watch();render()}
+ else if(a==='month'){S.month=t.value;S.range={slots:[],bookings:[]};watchRange();render()}
+ else if(a==='role')store.updateUser(t.dataset.v,{role:t.value}).then(()=>toast('บันทึกบทบาทแล้ว')).catch(()=>toast('บันทึกไม่สำเร็จ','err'))
+ else if(t.dataset.pf==='department')S.pd.department=t.value;
+ else if(t.id==='pfile'&&t.files[0]){const f=t.files[0];t.value='';if(!f.type.startsWith('image/'))return toast('กรุณาเลือกไฟล์รูปภาพ','err');try{(S.pd||(S.pd={})).photoURL=await thumb(f);render()}catch{toast('อ่านรูปไม่สำเร็จ','err')}}});
+document.addEventListener('click',async e=>{const t=e.target.closest('[data-a]');if(!t||t.tagName==='SELECT')return;const a=t.dataset.a,v=t.dataset.v;
+ if(a==='reg'){S.reg=true;S.forgot=false;S.loginErr='';render()}
+ else if(a==='forgot'){const e=$('#em');if(e)S.rv={...S.rv,email:e.value.trim()};S.forgot=true;S.fsent='';S.loginErr='';render()}
+ else if(a==='back'){S.reg=false;S.forgot=false;S.fsent='';S.loginErr='';render()}
+ else if(a==='eye'){const i=$('#'+v),show=i.type==='password';i.type=show?'text':'password';t.innerHTML=show?IC.eyeoff:IC.eye;t.setAttribute('aria-pressed',show);t.setAttribute('aria-label',show?'ซ่อนรหัสผ่าน':'แสดงรหัสผ่าน')}
+ else if(a==='logout'){await store.logout();location.reload()}
+ else if(a==='tab'){S.tab=v;if(v==='profile')S.pd={};if(v==='stats')watchRange();render();scrollTo(0,0)}
+ else if(a==='day'){S.date=v;watch();render()}
+ else if(a==='dis'){S.ntfs=S.ntfs.filter(n=>String(n.id)!==v);rn()}
+ else if(a==='perm'){if(!('Notification' in window))return;if(Notification.permission==='denied')toast('เบราว์เซอร์บล็อกการแจ้งเตือน — เปิดได้ที่การตั้งค่าไซต์','err');else{await Notification.requestPermission();render()}}
+ else if(a==='test'){notify('ทดสอบ: อีก 15 นาทีถึงคิวนวดของคุณ','นี่คือตัวอย่างการแจ้งเตือนที่จะเด้งก่อนถึงคิว');if('Notification' in window&&Notification.permission==='default')Notification.requestPermission().then(render)}
+ else if(a==='slot'){if(staff(S.user))return;if(mineHere())return toast('คุณมีคิวในวันพุธนี้แล้ว (จองได้ 1 ครั้ง/สัปดาห์)','err');S.sel=v;S.err='';render()}
+ else if(a==='close'){if(t.dataset.o&&e.target!==t)return;S.sel=null;S.err='';render()}
+ else if(a==='confirm'){const s=slotById(S.sel);if(!s||S.busy)return;S.busy=true;S.err='';render();
+  try{await store.book(s,S.user);S.sel=null;S.tab='my';toast(`จองคิวนวดสำเร็จ! รอบ ${s.startTime} - ${s.endTime} น.`)}catch(x){console.error(x);S.err=errMsg(x)}S.busy=false;render()}
+ else if(a==='cancel'){const b=nextQ();if(!b||!confirm('ยืนยันยกเลิกคิวนวดนี้? ที่นั่งจะถูกคืนให้เพื่อนพนักงาน'))return;
+  try{await store.cancel(b,S.user);toast('ยกเลิกคิวเรียบร้อย','info')}catch(x){toast(errMsg(x),'err')}}
+ else if(a==='ci'||a==='ns'){try{await store.setBookingStatus(S.bookings.find(b=>b.id===v),a==='ci'?'checked_in':'no_show');toast(a==='ci'?'เช็กอินเรียบร้อย':'บันทึกเป็นไม่มาตามนัด (No-show)')}catch{toast('อัปเดตไม่สำเร็จ','err')}}
+ else if(a==='gen'){try{toast(await store.generate(S.date)?`สร้าง 12 Slots ของ ${thai(S.date,1)} แล้ว`:'วันนี้มีรอบอยู่แล้ว (ไม่สร้างซ้ำ)')}catch{toast('สร้างรอบไม่สำเร็จ','err')}}
+ else if(a==='csv')csv();
+ else if(a==='pphoto')$('#pfile').click();
+ else if(a==='prem'){S.pd.photoURL='';render()}
+ else if(a==='pcol'){S.pd.avatarColor=v;render()}
+ else if(a==='psave'){const d=S.pd||{},n=(d.name??S.user.name).trim();if(!n)return toast('กรุณากรอกชื่อ','err');
+  const data={name:n,department:d.department??S.user.department,phone:(d.phone??S.user.phone??'').trim(),bio:(d.bio??S.user.bio??'').trim(),photoURL:d.photoURL??S.user.photoURL??'',avatarColor:d.avatarColor??S.user.avatarColor??'#047857'};
+  try{await store.saveProfile(S.user.uid,data);Object.assign(S.user,data);S.pd={};toast('บันทึกโปรไฟล์แล้ว');render()}catch(x){console.error(x);toast('บันทึกไม่สำเร็จ ('+(x.code||x.message)+')','err')}}});
+
+render();
+store.init((u,err)=>{S.reg=false;S.forgot=false;S.user=u;S.loginErr=err||'';S.ready=true;
+ if(u){S.tab=staff(u)?'admin':'book';uUnsub&&uUnsub();dataOn=usersOn=false;
+  uUnsub=store.subscribeUser(u.uid,d=>{Object.assign(S.user,d);const st=staff(S.user);if(st&&['book','my'].includes(S.tab))S.tab='admin';if(!st&&['admin','stats','users'].includes(S.tab))S.tab='book';startData();render()});startData()}
+ render()});
+</script>
+</body>
+</html>
